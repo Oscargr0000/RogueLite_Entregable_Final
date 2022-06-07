@@ -48,8 +48,6 @@ public class PlayerController : MonoBehaviour
         Physics.gravity = GravityForce;
 
         RunningPT.SetActive(false);
-
-        AMS.PlaySound(11);
     }
 
     private void FixedUpdate()

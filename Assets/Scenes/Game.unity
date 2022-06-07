@@ -1540,7 +1540,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261592235}
-  m_LocalRotation: {x: 0.16371009, y: -0.000000016974235, z: 0.0000000028168572, w: 0.9865085}
+  m_LocalRotation: {x: 0.16371007, y: 0.000000016974246, z: -0.0000000028168585, w: 0.9865085}
   m_LocalPosition: {x: 0, y: 4.3, z: -1.5999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5799,7 +5799,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1173032786}
   - component: {fileID: 1173032785}
-  - component: {fileID: 1173032787}
   m_Layer: 0
   m_Name: BackGroundMusic
   m_TagString: Untagged
@@ -5917,32 +5916,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1173032787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1173032784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9723f677371be7d4dacc5f9f424da1cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AS: {fileID: 1173032785}
-  Sound:
-  - {fileID: 8300000, guid: 75d589819ce2a2048aa5706c43a4fc4a, type: 3}
-  - {fileID: 8300000, guid: 75d589819ce2a2048aa5706c43a4fc4a, type: 3}
-  - {fileID: 8300000, guid: 75d589819ce2a2048aa5706c43a4fc4a, type: 3}
-  - {fileID: 8300000, guid: 75d589819ce2a2048aa5706c43a4fc4a, type: 3}
-  - {fileID: 8300000, guid: 75d589819ce2a2048aa5706c43a4fc4a, type: 3}
-  - {fileID: 8300000, guid: 75d589819ce2a2048aa5706c43a4fc4a, type: 3}
-  - {fileID: 8300000, guid: 75d589819ce2a2048aa5706c43a4fc4a, type: 3}
-  - {fileID: 8300000, guid: 75d589819ce2a2048aa5706c43a4fc4a, type: 3}
-  - {fileID: 8300000, guid: 75d589819ce2a2048aa5706c43a4fc4a, type: 3}
-  - {fileID: 8300000, guid: 75d589819ce2a2048aa5706c43a4fc4a, type: 3}
-  - {fileID: 8300000, guid: 75d589819ce2a2048aa5706c43a4fc4a, type: 3}
-  - {fileID: 8300000, guid: 75d589819ce2a2048aa5706c43a4fc4a, type: 3}
 --- !u!4 &1174728038 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4344263027771949042, guid: f102ab34b94a83a40baa0819c710e24b, type: 3}
@@ -13032,7 +13005,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: af95728350839424888cc1f5ccc7af65, type: 3}
   - {fileID: 8300000, guid: a5881b619567fd94cbd2c93a6189cf75, type: 3}
   - {fileID: 8300000, guid: a5881b619567fd94cbd2c93a6189cf75, type: 3}
-  - {fileID: 8300000, guid: 8d039f2dbefbdc0469dfcd8ba66159e9, type: 3}
 --- !u!4 &1467348546
 Transform:
   m_ObjectHideFlags: 0
@@ -16698,7 +16670,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024756254}
-  m_LocalRotation: {x: 0.16371009, y: -0.000000016974235, z: 0.0000000028168572, w: 0.9865085}
+  m_LocalRotation: {x: 0.16371007, y: 0.000000016974246, z: -0.0000000028168585, w: 0.9865085}
   m_LocalPosition: {x: 0, y: 4.3, z: -1.5999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

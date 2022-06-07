@@ -25,5 +25,4 @@ public class AudioManager : MonoBehaviour
     // 8 = correr
     // Botones MainMenu
     // 10 = Botones GamoOver y Pausa
-    //11 Musica
 }
