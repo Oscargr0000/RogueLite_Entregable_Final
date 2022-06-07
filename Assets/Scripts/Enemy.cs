@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum EnemyType
@@ -9,31 +7,29 @@ public enum EnemyType
 }
 public class Enemy : MonoBehaviour
 {
-    private GameObject Player;
-    public float EnemyHP;
-    public float Damage;
-    public float Speed;
-    public int HPprobability;
-    public GameObject HpRecover;
-
-    private Rigidbody enemyRigidbody;
-
     private PlayerController PlayerControllerScript;
     private AudioManager AMS;
 
-    public Animator EnemyAttack;
-    
+    private Rigidbody enemyRigidbody;
 
+
+    private GameObject Player;
+    public GameObject HpRecover;
+
+    //STATS
+    public float EnemyHP;
+    public float Damage;
+    public float Speed;
+    public Animator EnemyAttack;
+
+
+    public int HPprobability;
     Vector3 direction;
 
     public EnemyType Type;
 
-
-
-    // Start is called before the first frame update
     void Start()
     {
-
         Player = GameObject.Find("Player");
 
         enemyRigidbody = GetComponent<Rigidbody>();
@@ -42,21 +38,18 @@ public class Enemy : MonoBehaviour
 
         if (Type == EnemyType.rojo)
         {
+            // Stats enemyRed
             EnemyHP = DataPersistanceScript.sharedInstance.HpRedData;
             Damage = DataPersistanceScript.sharedInstance.DamageRedData;
             Speed = DataPersistanceScript.sharedInstance.SpeedRedData;
-            // enemyHp = DataPersistanceHProjo + Multiplicador
         }
         else if( Type == EnemyType.lila)
         {
+            // Stats enemyLila
             EnemyHP = DataPersistanceScript.sharedInstance.HpLilaData;
             Damage = DataPersistanceScript.sharedInstance.DamageLilaData;
             Speed = DataPersistanceScript.sharedInstance.SpeedLilaData;
-            // enemyHp = DataPersistanceHPlila + Multiplicador
         }
-       
-
-
     }
 
     private void FixedUpdate()
@@ -73,30 +66,25 @@ public class Enemy : MonoBehaviour
         {
             Speed = 0f;
         }
+
+        //Movimiento hacia el Player
         Vector3 RBMovement = Vector3.forward;
         RBMovement = transform.TransformDirection(RBMovement);
 
         enemyRigidbody.MovePosition(enemyRigidbody.position + RBMovement * Speed * Time.deltaTime);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //Quitar esta linea de codigo
+        // LIFE HACK ;)
         if (Input.GetKeyDown(KeyCode.J))
         {
             DestroyEnemy();
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.gameObject.CompareTag("Player"))
         {
             EnemyAttack.SetTrigger("AttaqueEnemigo");
@@ -106,7 +94,7 @@ public class Enemy : MonoBehaviour
 
         if (other.gameObject.CompareTag("Shield"))
         {
-            Empuje(7f);
+            Empuje(8f);
             AMS.PlaySound(7);
         }
     }
@@ -114,6 +102,8 @@ public class Enemy : MonoBehaviour
     public void DestroyEnemy()
     {
         Vector3 RecoverLifeSP = new Vector3(transform.position.x, 1, transform.position.z);
+
+        //Probabilidad del 20% de sacar una orbe de curacion
         HPprobability = Random.Range(1, 10);
 
         if(HPprobability == 1)
@@ -126,11 +116,10 @@ public class Enemy : MonoBehaviour
         }
 
         Destroy(gameObject);
-        //Partoculas
         AMS.PlaySound(6);
     }
 
-    public void Empuje(float Fuerza)
+    public void Empuje(float Fuerza) 
     {
         enemyRigidbody.AddForce(-direction * Fuerza, ForceMode.VelocityChange);
     }

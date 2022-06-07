@@ -1,28 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapons : MonoBehaviour
 {
-    public float Damage;
     private Enemy EnemyScript;
-    private AudioManager AMS;
-    private SpawnManager SpawnManagerScript;
-    private FollowPlayer FollowPlayerScript;
-    public ParticleSystem HitParticle;
     public PlayerController PCS;
 
-    public bool LFSactivate;
+    public float Damage;
+    public ParticleSystem HitParticle;
 
+    public bool LFSactivate;
     public float LfsCapacity;
 
 
     private void Start()
     {
         PCS = FindObjectOfType<PlayerController>();
-        AMS = FindObjectOfType<AudioManager>();
-        FollowPlayerScript = FindObjectOfType<FollowPlayer>();
-        SpawnManagerScript = FindObjectOfType<SpawnManager>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -36,7 +28,7 @@ public class Weapons : MonoBehaviour
                 PCS.HP += LfsCapacity;
             }
 
-            Instantiate(HitParticle, other.gameObject.transform.position, other.gameObject.transform.rotation);
+            Instantiate(HitParticle, other.gameObject.transform.position, other.gameObject.transform.rotation); // PARTICULAS
             //var HitEm = HitParticle.emission;
             //HitEm.enabled = true;
 

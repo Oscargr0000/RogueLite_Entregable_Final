@@ -1,37 +1,40 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class MainMenuManager : MonoBehaviour
 {
     public GameObject[] GeneralCanvas;
-    private AudioManager AMS;
-    public Animator Fade;
-    public GameObject FadeOBJ;
 
+    private AudioManager AMS;
     public Slider SliderVolum;
     public float VolumValue;
 
+    public Animator Fade;
+    public GameObject FadeOBJ;
+
     private void Start()
     {
+        //SONIDOS
         AMS = FindObjectOfType<AudioManager>();
         AMS.PlaySound(0);
+
+        SliderVolum.value = 0.5f;
+        AudioListener.volume = SliderVolum.value;
+
+        //CANVAS
         FadeOBJ.SetActive(false);
         GeneralCanvas[0].SetActive(true);
         GeneralCanvas[1].SetActive(false);
-
-        SliderVolum.value = 0.5f;
-        //SliderVolum.value = PlayerPrefs.GetFloat("volumenAudio", 0.5f);
-        AudioListener.volume = SliderVolum.value;
     }
 
     public void ChangeSlider(float Valor)
     {
         SliderVolum.value = Valor;
-       // PlayerPrefs.SetFloat("volumenAudio", VolumValue);
         AudioListener.volume = SliderVolum.value;
     }
+
+
 
     public void Options()
     {
@@ -53,20 +56,6 @@ public class MainMenuManager : MonoBehaviour
         Sounds();
     }
 
-    public void Espada()
-    {
-        
-    }
-
-    public void Lanza()
-    {
-
-    }
-
-    public void Maza()
-    {
-
-    }
     void GeneralChange(int FalseCanvas, int TrueCanvas)
     {
         GeneralCanvas[FalseCanvas].SetActive(false);
@@ -76,6 +65,8 @@ public class MainMenuManager : MonoBehaviour
     {
         AMS.PlaySound(1);
     }
+
+
 
     IEnumerator WaitPlay()
     {

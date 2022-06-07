@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -8,10 +6,12 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 10f;
     private float RunningSpeed = 2f;
+    private float rotationSpeed = 200f;
+
     private float verticalInput;
     private float horizontalInput;
-    private float rotationSpeed = 300f;
     private float MouseXInput;
+
     private Vector3 GravityForce = new Vector3(0, -9.8f, 0);
 
     public bool itsOntheGround;
@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
     public float HP = 100f;
 
     public Rigidbody RigidBodyComponent;
-    public LayerMask GroundLayer;
     public GameObject RunningPT;
     private AudioManager AMS;
     private Enemy ES;
@@ -37,17 +36,19 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        
         AMS = FindObjectOfType<AudioManager>();
         ACS = FindObjectOfType<AnimatorController>();
         ES = FindObjectOfType<Enemy>();
         RigidBodyComponent = GetComponent<Rigidbody>();
         MenuManagerScript = FindObjectOfType<MenuManager>();
-        RunningPT.SetActive(false);
-
-        AMS.PlaySound(11);
 
         GOP = false;
         Physics.gravity = GravityForce;
+
+        RunningPT.SetActive(false);
+
+        AMS.PlaySound(11);
     }
 
     private void FixedUpdate()
@@ -113,6 +114,7 @@ public class PlayerController : MonoBehaviour
             Jumps = 0;
         }
 
+        //Intento de evitar que se traspasen las paredes
         if (collision.gameObject.CompareTag("Wall"))
         {
             Vector3 Direccion = transform.position - collision.gameObject.transform.position;

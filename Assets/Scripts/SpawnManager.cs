@@ -1,26 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject[] Enemies;
-    private int RandomNum;
-    public int TotalRounds = 1;
-    private float RandomSpawn;
-    public bool ShowPowerUps;
-
     private PlayerController PCS;
 
+    public int TotalRounds = 1;
+    private int RandomNum;
+    
+
+    public GameObject[] Enemies;
     public int totalEnemy = 1;
     public int EnemyLeft;
 
-    
 
     private float RandomX;
     private float RandomZ;
 
+    public bool ShowPowerUps;
 
 
     void Start()
@@ -29,13 +26,12 @@ public class SpawnManager : MonoBehaviour
         PCS = FindObjectOfType<PlayerController>();
         SpawnEnemyWave(totalEnemy);
         Cursor.lockState = CursorLockMode.Locked;
-
-
     }
 
     
     void Update()
     {
+        //SPAWN DE LOS ENEMIGOS y SHOWCARDS
         EnemyLeft = FindObjectsOfType<Enemy>().Length;
         if (EnemyLeft <= 0)
         {
@@ -46,7 +42,6 @@ public class SpawnManager : MonoBehaviour
                 return;
             }
 
-            
             totalEnemy++;
             SpawnEnemyWave(totalEnemy);
            
@@ -82,7 +77,6 @@ public class SpawnManager : MonoBehaviour
         }
         TotalRounds++;
     }
-
 
     public void MostrarPowerUps()
     {

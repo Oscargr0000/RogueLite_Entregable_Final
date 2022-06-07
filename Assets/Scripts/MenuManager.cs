@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using UnityEngine.SceneManagement;
@@ -22,8 +21,10 @@ public class MenuManager : MonoBehaviour
     public GameObject PauseGameCanvas;
     public GameObject PauseAlert;
     public GameObject GameOverCanvas;
+
     public TextMeshProUGUI HpText;
     public TextMeshProUGUI RoundText;
+
     private AudioManager AMS;
     public ParticleSystem SparkPS;
 
@@ -37,17 +38,17 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         AMS = FindObjectOfType<AudioManager>();
-
-        GameOverCanvas.SetActive(false);
         WeaponsScript = FindObjectOfType<Weapons>();
         PlayerControllerScript = FindObjectOfType<PlayerController>();
         SpawnManagerScript = FindObjectOfType<SpawnManager>();
         FollowPlayerScript = FindObjectOfType<FollowPlayer>();
+
+        GameOverCanvas.SetActive(false);
         PowerUpsCanvas.SetActive(false);
         PauseGameCanvas.SetActive(false);
-        FollowPlayerScript.ShieldActive = false;
         PauseAlert.SetActive(false);
-        
+
+        FollowPlayerScript.ShieldActive = false;
     }
 
     private void Update()
@@ -151,14 +152,11 @@ public class MenuManager : MonoBehaviour
         AMS.PlaySound(10);
     }
 
-    
-
     public void PlayAgain()
     {
         SceneManager.LoadScene(1);
         AMS.PlaySound(10);
     }
-
 
     private void GeneralDataPower()
     {

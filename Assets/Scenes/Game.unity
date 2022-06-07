@@ -7481,13 +7481,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c322681b129fdf94b8a5e32d8180590f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TotalRounds: 1
   Enemies:
   - {fileID: 1719623886003677884, guid: 166c563926fb37548988cb8a524c46e7, type: 3}
   - {fileID: 188945759707902930, guid: 487c270cf8cbf694695b1d76e02578ed, type: 3}
-  TotalRounds: 1
-  ShowPowerUps: 0
   totalEnemy: 1
   EnemyLeft: 0
+  ShowPowerUps: 0
 --- !u!4 &1324643096
 Transform:
   m_ObjectHideFlags: 0
@@ -15101,9 +15101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4ced4690e202b4d9ddf46d90719c64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PCS: {fileID: 0}
   Damage: 10
   HitParticle: {fileID: 19800004, guid: f95ff734540a0d749be6571b6cb5b37f, type: 3}
-  PCS: {fileID: 0}
   LFSactivate: 0
   LfsCapacity: 0
 --- !u!23 &1714962291
@@ -16625,9 +16625,6 @@ MonoBehaviour:
   JumpMax: 0
   HP: 100
   RigidBodyComponent: {fileID: 0}
-  GroundLayer:
-    serializedVersion: 2
-    m_Bits: 0
   RunningPT: {fileID: 1368815407}
   Deap_ps: {fileID: 198681264470032530, guid: aa8d6482d70a23445b4b2a928ed1b845, type: 3}
   Heal_ps: {fileID: 19800004, guid: 757df604761b8ef42831192c70ee1099, type: 3}
