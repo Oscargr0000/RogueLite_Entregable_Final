@@ -324,10 +324,10 @@ MonoBehaviour:
   GeneralCanvas:
   - {fileID: 936486543}
   - {fileID: 844823705}
-  Fade: {fileID: 1417561097}
-  FadeOBJ: {fileID: 1417561096}
   SliderVolum: {fileID: 1358640716}
   VolumValue: 0
+  Fade: {fileID: 1417561097}
+  FadeOBJ: {fileID: 1417561096}
 --- !u!4 &67566622
 Transform:
   m_ObjectHideFlags: 0
@@ -3354,7 +3354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AS: {fileID: 670948211}
   Sound:
-  - {fileID: 8300000, guid: faae6a59f00f7d24bbb56bbfc3fc7806, type: 3}
+  - {fileID: 8300000, guid: 134984a2e08d48243aa4f37268c0314d, type: 3}
   - {fileID: 8300000, guid: a5881b619567fd94cbd2c93a6189cf75, type: 3}
 --- !u!4 &2014260458
 Transform:

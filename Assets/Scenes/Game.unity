@@ -5376,6 +5376,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1122083322}
   - component: {fileID: 1122083321}
+  - component: {fileID: 1122083323}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -5394,7 +5395,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.6839622, g: 0.73224574, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -5459,6 +5460,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 26.183, y: -23.59, z: 10.98}
+--- !u!95 &1122083323
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122083320}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ac9a6ba4699a1a4b99b78ecb12ef537, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1130853737 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4344263027771949042, guid: f102ab34b94a83a40baa0819c710e24b, type: 3}
@@ -5818,7 +5838,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8d039f2dbefbdc0469dfcd8ba66159e9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
