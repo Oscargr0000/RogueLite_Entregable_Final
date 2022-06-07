@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -127,7 +128,6 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Heal"))
         {
             HP += 5;
-            Debug.Log(HP);
             Destroy(other.gameObject);
             Instantiate(Heal_ps, transform.position, transform.rotation);
             if (HP >= MenuManagerScript.VidaMaxima)
@@ -145,26 +145,10 @@ public class PlayerController : MonoBehaviour
 
             if (HP <= 0)
             {
-                GameOverPlayer();
-            }
-
-            if (GOP == true)
-            {
-                ACS.enabled = false;
+                SceneManager.LoadScene(2);
             }
         }
- 
     }
 
-    void GameOverPlayer()
-    {
-        Cursor.lockState = CursorLockMode.Confined;
-        Destroy(gameObject);
-        GOP = true;
-        LockCursor = true;
-        MenuManagerScript.GameOverCanvas.SetActive(true);
-        Instantiate(Deap_ps, transform.position, transform.rotation);
-        AMS.PlaySound(5);
-        
-    }
+    
 }

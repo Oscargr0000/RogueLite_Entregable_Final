@@ -20,7 +20,6 @@ public class MenuManager : MonoBehaviour
     public GameObject PowerUpsCanvas;
     public GameObject PauseGameCanvas;
     public GameObject PauseAlert;
-    public GameObject GameOverCanvas;
 
     public TextMeshProUGUI HpText;
     public TextMeshProUGUI RoundText;
@@ -43,7 +42,6 @@ public class MenuManager : MonoBehaviour
         SpawnManagerScript = FindObjectOfType<SpawnManager>();
         FollowPlayerScript = FindObjectOfType<FollowPlayer>();
 
-        GameOverCanvas.SetActive(false);
         PowerUpsCanvas.SetActive(false);
         PauseGameCanvas.SetActive(false);
         PauseAlert.SetActive(false);
@@ -72,7 +70,7 @@ public class MenuManager : MonoBehaviour
             PowerUpsCanvas.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             PauseMenu();
         }
@@ -121,10 +119,9 @@ public class MenuManager : MonoBehaviour
     // PauseMenu
     public void PauseMenu()
     {
-        PauseGameCanvas.SetActive(true);
-        Time.timeScale = 0;
-        AMS.PlaySound(10);
         PlayerControllerScript.LockCursor = false;
+        PauseGameCanvas.SetActive(true);
+        Time.timeScale = 0; 
     }
 
     public void ReturnPlay()
@@ -132,6 +129,7 @@ public class MenuManager : MonoBehaviour
         PauseGameCanvas.SetActive(false);
         Time.timeScale = 1;
         AMS.PlaySound(10);
+        PlayerControllerScript.LockCursor = true;
     }
 
     public void Escape()

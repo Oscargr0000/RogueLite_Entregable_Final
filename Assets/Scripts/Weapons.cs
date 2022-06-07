@@ -33,7 +33,6 @@ public class Weapons : MonoBehaviour
             //HitEm.enabled = true;
 
             EnemyScript.EnemyHP -= Damage;
-            Debug.Log($"Enemy:{EnemyScript.EnemyHP}");
             
             if( EnemyScript.EnemyHP <= 0f)
             {
